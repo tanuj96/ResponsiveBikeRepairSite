@@ -1,12 +1,15 @@
 html {
-    height: 100%;
+    /* height: 200%; */
+    background-image: linear-gradient(#FC5E55, #FA4083);
 }
 
 body {
-    background-image: linear-gradient(#FC5E55, #FA4083);
-    font-family     : 'Roboto', sans-serif;
-    color           : white;
-    font-size       : 1.125rem;
+    background-image   : url('./images/image-lion-background.png');
+    background-position: bottom center;
+    background-repeat  : no-repeat;
+    font-family        : 'Roboto', sans-serif;
+    color              : white;
+    font-size          : 1.125rem;
 }
 
 .container {
@@ -19,15 +22,81 @@ body {
 
 header {
     /* background-color: rgb(41, 96, 36); */
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-    padding        : 20px 0;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    padding         : 20px 0;
+    /* border-bottom: thin double lightgrey; */
+    /* border-bottom: thick dotted lightgrey;  */
+    border-bottom   : thin solid lightgrey;
 }
 
-nav {
+/* nav {
     display        : flex;
     justify-content: space-around;
+} */
+
+.myButton {
+    background-color: white;
+    text-decoration : none;
+    color           : #FA4083;
+    font-family     : 'Playfair Display', serif;
+    border          : thin solid white;
+    padding         : 11px 25px;
+    border-radius   : 5px;
+    display         : inline-block;
+    /* margin-top   : 20px; */
+    transition      : all 0.3s ease;
+    box-shadow      : 5px 5px 5px rgba(0, 0, 0, 0.274);
+    cursor          : pointer;
+    outline         : none;
+}
+
+.myButton:hover {
+    transform : scale(1.1);
+    transition: all 0.3s ease;
+}
+
+nav a.myButton {
+    /* margin-left: 30px; */
+    background   : transparent;
+    color        : white;
+    border-radius: 0;
+    border       : thick double white;
+}
+
+.navbutton {
+    position: relative;
+    display : inline-block;
+}
+
+.dropdownblock {
+    position   : absolute;
+    display    : none;
+    margin-left: -6px !important;
+    z-index    : 1;
+    padding-top: 2px;
+    text-align : center;
+}
+
+.navbutton:hover .dropdownblock {
+    display: block;
+}
+
+.navbutton .dropdownblock {
+    width: 190px;
+}
+
+.dropdownblock .navbutton {
+    padding-right: 20px;
+}
+
+.dropdownblock .navbutton a {
+    color           : rgb(161, 12, 161);
+    background-color: white;
+    border-top      : 0.5px solid grey;
+    ;
+    border-bottom: 0.5px solid grey;
 }
 
 main {
@@ -54,16 +123,31 @@ p {
     margin-bottom: 0.5rem;
 }
 
-.cards p {
-    font-size  : 0.85rem;
-    line-height: 1.2rem;
-    margin-top : 10px;
+.herobox1 {
+    /* background-color: cornflowerblue; */
+    flex         : 2;
+    padding-right: 100px;
+
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.479);
 }
+
+
+.herobox2 {
+    /* background-color: mintcream; */
+    flex: 1;
+}
+
 
 .cards {
     display        : flex;
     justify-content: space-between;
     text-align     : center;
+}
+
+.cards p {
+    font-size  : 0.85rem;
+    line-height: 1.2rem;
+    margin-top : 10px;
 }
 
 .card1 {
@@ -90,20 +174,8 @@ p {
     width              : 30%;
 }
 
-.herobox1 {
-    /* background-color: cornflowerblue; */
-    flex         : 2;
-    padding-right: 100px;
-}
-
-
-.herobox2 {
-    /* background-color: mintcream; */
-    flex: 1;
-}
-
 .cards i {
-    font-size  : 100px;
+    font-size: 100px;
 }
 
 .cards a {
@@ -114,18 +186,101 @@ p {
 .card1,
 .card2,
 .card3 {
-    padding : 30px 30px 20px 30px;
+    padding   : 30px 30px 20px 30px;
     box-sizing: border-box;
 }
 
-.myButton{
-    background-color: white;
-    text-decoration: none;
-    color:#FA4083;
-    font-family: 'Playfair Display', serif;
-    border: thin solid white;
-    padding: 11px 25px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
+.testimonials {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+    margin-bottom  : 100px;
+}
+
+.tbox {
+    width     : 47%;
+    padding   : 50px;
+    border    : 1px solid white;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+/* pseudo classes */
+
+
+
+/* .tbox :last-child{
+    font-size: 0.8rem;
+} */
+
+/* .tbox p:last-of-type{
+    font-size: 0.8rem;
+    padding-left: 30px;
+} */
+
+
+.testimonials .tbox:nth-child(2n) {
+    border: thick dotted white;
+}
+
+.testimonials .tbox:nth-child(3n) {
+    border: thick double white;
+}
+
+
+/* Contact Page Styling  */
+
+.main2 {
+    min-height : 300px;
+    padding-top: 50px;
+    text-align : center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.479);
+}
+
+
+.main2 form .inputBox {
+    display         : inline-block;
+    width           : 200px;
+    height          : 40px;
+    text-align      : center;
+    margin          : 10px;
+    margin-right: 80px;
+    border          : none;
+    /* border-radius: 50px; */
+    /* outline      : none; */
+    color           : #FC585F;
+    font-size       : 1rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.479);
+}
+
+.main2 form .myButton {
+    display      : block;
+    width        : 20%;
+    border-radius: 40px;
+    margin       : 5px auto;
+    font-size    : 1.1rem;
+}
+
+.preference{
+    margin: 50px auto;
+}
+
+.preference div{
+    display: block;
+}
+
+#country{
+    margin: 30px auto;
+    width: 200px;
+    width           : 200px;
+    height          : 40px;
+    text-align      : center;
+    border          : none;
+    color           : #FC585F;
+    font-size       : 1rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.479);
+}
+
+input[type=radio]{
+    font-size: 5rem;
 }
